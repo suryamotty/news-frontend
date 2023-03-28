@@ -1,0 +1,76 @@
+
+<app-header-one></app-header-one>
+<div class="container mt-2">
+    <h2 style="text-align: center;margin-top: 50px;">Choose Your Plan</h2>
+ <div class=" sub">
+    <div class="card1">
+        <h2>Reader's Choice</h2>
+        <h3><span>Rs.299</span>/month</h3>
+        <ul>
+            <li>The NewsWeb.com On Desktop and Mobile</li>
+            <li>Digital replica of Print via e-Paper</li>
+            <li>Mobile Apps on Android and iOS</li>
+            <li>500+ Premium articles</li>
+            <li>Crossword on the web</li>
+        </ul>
+        <button (click)="subscribe()"><b>SELECT</b></button>
+
+    </div>
+    <div class="card2">
+        <h2>Exclusive Combo</h2>
+        <h3><span>Rs.399</span>/month</h3>
+        <ul>
+            <li>The NewsWeb.com On Desktop and Mobile</li>
+            <li>Digital replica of Print via e-Paper</li>
+            <li>Frontline Digital Access</li>
+            <li>Mobile Apps on Android and iOS</li>
+            <li>500+ Premium articles</li>
+            <li>Crossword on the web</li>
+        </ul>
+        <button (click)="subscribe()"><b>SELECT</b></button>
+    </div>
+    <div class="card3">
+        <h2>Reader's Choice</h2>
+        <h3><span>Rs.299</span>/month</h3>
+        <ul>
+            <li>The NewsWeb.com On Desktop and Mobile</li>
+            <li>Digital replica of Print via e-Paper</li>
+            <li>Mobile Apps on Android and iOS</li>
+            <li>500+ Premium articles</li>
+            <li>Crossword on the web</li>
+        </ul>
+        <button (click)="subscribe()"><b>SELECT</b></button>
+    </div>
+ </div>
+ <div class=" col mt-3 mb-5">
+
+
+       
+    <form (ngSubmit)="register()"  [formGroup]="registerForm" class="border mt-5 me-5 p-5">
+      
+        <h4><b>Subscription Form</b></h4>
+        <h5 style="margin-top: 5px;text-align: center;">Don't have an account, register here</h5>
+ 
+      <!-- email -->
+          <div>
+              <input name="email" formControlName="email" type="text" placeholder="Enter email address" class="form-control mt-5">
+          </div>
+     <!-- invalid email -->
+          <div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched" class="text-danger mt-2">Invalid Email Address</div>
+      <!-- password -->
+          <div class="mt-4">
+              <input name="pswd" formControlName="pswd" type="password" placeholder="Password" class="form-control">
+          </div>
+      <!-- invalid password -->
+          <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" class="text-danger mt-2">Invalid password</div>
+          <div class="mt-4">
+              <button type="submit" class="btn "><b>SUBSCRIBE</b></button>
+            
+              
+          </div>
+    </form>
+    
+  </div>
+
+</div>
+<!-- this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched -->

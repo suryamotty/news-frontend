@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    overflow-x: hidden;
+   
+}
+
+.box{
+    height:100%;
+    background: #fffefe;
+    margin:20px 20px;
+    border-radius: 10px;
+  
+}
+.box img{
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.box:hover{
+    background: rgb(250, 250, 246);
+}

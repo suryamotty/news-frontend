@@ -1,0 +1,19 @@
+<app-header-two></app-header-two>
+<div class="container-fluid">
+    <div class="headings">
+        <h3 class="mt-5 mb-3">Business News</h3>
+        <h5>Join the thousands of informed citizens who rely on the credible quality news online every single day.</h5>
+   </div>
+    <div class="row ">
+        <div  *ngFor="let data of businessNewsDisplay" class="col-lg-3 col-md-6 mb-4 ">
+          
+        <div class="box py-3 px-3">
+            <img src="{{data.urlToImage}}" width="100%" alt="">
+               <h5> {{data.title}}</h5>
+               <!-- <p>{{data.content}}</p> -->
+             <a  class= "btn "  href="{{data.url}}" target="_blank" >Read More...</a>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- href="{{data.url}}"  -->

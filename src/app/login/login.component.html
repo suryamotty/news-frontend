@@ -1,0 +1,51 @@
+<!-- <p>login works!</p> -->
+
+<div class="row ms-2">
+    <div class=" col mt-3">
+
+
+       
+      <form (ngSubmit)="login()"  [formGroup]="loginForm" class="border mt-5 me-5 p-5">
+        <h4>Login to your Account</h4>
+        <p>Don't have an account ? <a routerLink="/register"> Register</a></p>
+       
+   
+        
+        <!-- email -->
+        <div>
+            <input name="email" formControlName="email" type="text" placeholder="Enter email address" class="form-control mt-5">
+        </div>
+        
+        <!-- invalid email -->
+        <div *ngIf="this.loginForm.get('email')?.errors&&this.loginForm.get('email')?.touched" class="text-danger mt-2">Invalid Email Address
+
+        </div>
+       
+        <!-- password -->
+            <div class="mt-4">
+                <input name="pswd" formControlName="pswd" type="password" placeholder="Password" class="form-control">
+            </div>
+        <!-- invalid password -->
+            <div *ngIf="this.loginForm.get('pswd')?.errors&&this.loginForm.get('pswd')?.touched" class="text-danger mt-2">Invalid password
+
+            </div>
+            <!-- error msg -->
+            <div class="text-danger mt-3">{{errorMsg}}</div>
+            
+            <div class="buttons mt-4">
+                <button type="submit" class="btn1"><b>LOGIN</b>&nbsp;
+                    <span *ngIf="successMsg" class="spinner-border text-light" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </span>
+                </button>
+                
+                
+            </div>
+      </form>
+      <!-- <div class="unsubs">
+        <p><b>If you want to unsubscribe from NewsWeb Click the button below:</b></p>
+        <button  (click)="unsub()" type="submit" class="btn2"><b>UNSUBSCRIBE</b></button>
+      </div> -->
+      
+    </div>
+</div>
